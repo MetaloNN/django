@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %} Productos {% endblock %} 
+
+{% block contenido %}
+
+{% for producto in productos %}
+    <div class="col-4 p-4">
+      <div class="card bg-warning" style="width: 20rem;">
+        <div class="card-body">
+            <img src="../static/images/{{ producto.img }}" class="card-img-top">
+            <div class="mt-3">
+            <h5 class="card-title">{{ producto.name }}</h5>
+            <p class="card-text">{{ producto.descripcion }}</p>
+            <p class="card-text">Valor: ${{ producto.valor }} pesos.</p>
+            </div>
+          </div>
+      </div>
+    </div>  
+{% endfor %}
+
+{% endblock %}
